@@ -1,0 +1,19 @@
+<h1>Kittens available</h1>
+
+<div *ngFor="let kitten of datas; let i = index">
+  <ul>
+    <li>
+      <img [src]="kitten.photoUrl" [alt]="kitten.name">
+      <h3 [innerHTML]='kitten.name'></h3>
+      <h3 [innerHTML]='kitten.race'></h3>
+      <h3 [innerHTML]='kitten.birthday'></h3>
+      <button (click)="adoptKitty(i)">Adopt</button>
+    </li>
+  </ul>
+</div>
+
+
+<!--
+  
+
+-->

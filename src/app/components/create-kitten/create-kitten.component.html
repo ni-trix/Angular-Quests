@@ -1,0 +1,123 @@
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group"> 
+      <label for="name">
+        Name:
+        <input type="text" id="name" class="form-control" name="name" ngModel required>
+      </label>
+    </div>
+
+    <div class="form-group"> 
+      <label for="race">
+        Race:
+        <input type="text" id="race" class="form-control" name="race" ngModel required>
+      </label><br>
+    </div>
+
+    <div class="form-group"> 
+      <label for="birthday">
+        Birthday:
+        <input type="date" id="birthday" class="form-control" name="birthday" ngModel required>
+      </label><br>
+    </div>
+
+    <div class="form-group"> 
+      <label for="photoUrl">
+          Photo URL:
+        <input type="url" id="photoUrl" class="form-control" name="photoUrl" ngModel>
+      </label><br>
+    </div>
+
+    <button type="submit" [disabled]="f.invalid">Submit</button>
+
+  </form>
+
+
+
+
+<!--    OLD VERSION 
+
+  HTML 
+
+
+<div class="theForm">
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group"> 
+      <label for="name">
+        Name:
+        <input type="text" formControlName="name">
+      </label>
+    </div>
+    <div class="form-group"> 
+      <label for="race">
+        Race:
+        <input type="text" formControlName="race">
+      </label><br>
+    </div>
+    <div class="form-group"> 
+      <label for="birthday">
+        Birthday:
+        <input type="date" formControlName="birthday">
+      </label><br>
+    </div>
+    <div class="form-group"> 
+      <label for="photoUrl">
+          Photo URL:
+        <input type="url" formControlName="photoUrl">
+      </label><br>
+    </div>
+
+  </form>
+
+  <button type="submit" [disabled]="!profileForm.valid" (click)="onSubmit()">Submit</button>
+
+</div>
+
+
+
+
+      TSSSSSSS
+
+
+
+
+export class CreateKittenComponent implements OnInit {
+  datas = [];
+  profileForm = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.minLength(1)]),
+    race: new FormControl('', [Validators.required, Validators.minLength(1)]),
+    birthday: new FormControl('', [Validators.required]),
+    photoUrl: new FormControl('', ),
+  });
+
+  constructor( public transmissionServService: TransmissionServService ) { }
+
+  onSubmit($event) {
+
+    let urlForm = this.profileForm.value.photoUrl;
+    let nameForm = this.profileForm.value.name;
+    let raceForm = this.profileForm.value.race;
+    let birthForm = this.profileForm.value.birthday;
+
+    if ( nameForm.length >= 2 && raceForm.length >= 2) {
+    this.datas.push(nameForm);
+    this.datas.push(raceForm);
+    this.datas.push(birthForm);
+    this.datas.push(urlForm);
+    console.log('oui');
+    console.log(this.datas);
+    } else {
+      console.log('ERROR');
+    }
+  }
+
+  ngOnInit() {
+    this.datas = this.transmissionServService.datas;
+  }
+
+}
+
+
+
+
+-->

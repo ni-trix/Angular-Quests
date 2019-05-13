@@ -1,0 +1,27 @@
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+  
+  <div class="navbar-brand">
+    <a class="navbar-item" [routerLink]="['/home']">
+      <img src="https://i.ibb.co/Smq43rn/ADOPT-A-PET.jpg" width="112" height="78">
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-end">
+      <a [routerLink]="['/home']" class="navbar-item">
+        HOME
+      </a>
+
+      <a [routerLink]="['/create-kitten']" class="navbar-item">
+        CREATE UR KITTY !
+      </a>
+    </div>
+  </div>
+
+</nav>
