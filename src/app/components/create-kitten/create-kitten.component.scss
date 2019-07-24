@@ -1,4 +1,22 @@
-.theForm{
-    border: 1px, solid, black;
-    text-align: center;
+.formHeader{
+    margin-left: 10%;
+    margin-right: 10%;
+    h1{
+        margin-top: 5%;
+        text-align: center;
+    }
+}
+
+form{
+    padding: 10%;
+    padding-top: 5%;
+    .form-group{
+        margin: 2%;
+    }
+    .champsRequis{
+        color: red;
+    }
+    .buttonForm{
+        text-align: center;
+    }
 }

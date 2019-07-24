@@ -10,11 +10,20 @@ import { TransmissionServService } from '../../services/transmission-serv.servic
 })
 export class UserKittenComponent implements OnInit {
 userCats;
+hoverIndex;
 
   constructor(public transmissionServService: TransmissionServService) { }
 
   ngOnInit() {
     this.userCats = this.transmissionServService.userDatas;
   }
+
+  enter() {
+    this.hoverIndex = true;
+}
+
+leave() {
+    this.hoverIndex = false;
+}
 
 }

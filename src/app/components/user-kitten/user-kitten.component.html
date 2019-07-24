@@ -1,12 +1,16 @@
-<h1>USERS Kittens</h1>
+<div class="headerList">
+  <h1>Your Kittens :</h1>
+</div>
 
-<div *ngFor="let kitten of userCats; let i = index">
+<div *ngFor="let kitten of userCats; let i = index" class="kittenCard" (mouseenter)="enter()" (mouseleave)="leave()">
   <ul>
     <li>
       <img [src]="kitten.photoUrl" [alt]="kitten.name">
-      <h3 [innerHTML]='kitten.name'></h3>
-      <h3 [innerHTML]='kitten.race'></h3>
-      <h3 [innerHTML]='kitten.birthday'></h3>
+      <div *ngIf="hoverIndex == true" class="kittenInfos">
+        <h3 [innerHTML]='kitten.name'></h3>
+        <h3 [innerHTML]='kitten.race'></h3>
+        <h3 [innerHTML]='kitten.birthday'></h3>
+      </div>
     </li>
   </ul>
 </div>

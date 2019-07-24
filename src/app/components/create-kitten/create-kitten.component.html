@@ -1,35 +1,44 @@
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-    <div class="form-group"> 
-      <label for="name">
-        Name:
-        <input type="text" id="name" class="form-control" name="name" ngModel required>
-      </label>
-    </div>
+<div class="formHeader">
+    <h1>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem distinctio illum, odit sed, voluptas delectus officia nemo et similique impedit autem! Laboriosam ipsa, aperiam nesciunt mollitia quas recusandae eum nostrum.
+    </h1>
+</div>
 
-    <div class="form-group"> 
-      <label for="race">
-        Race:
-        <input type="text" id="race" class="form-control" name="race" ngModel required>
-      </label><br>
-    </div>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="form-group"> 
+    <label for="name">
+      Name<span class="champsRequis">*</span>
+      <input type="text" id="name" class="form-control input is-primary is-small" name="name" ngModel required>
+    </label>
+  </div>
 
-    <div class="form-group"> 
+  <div class="form-group"> 
+    <label for="race">
+      Race<span class="champsRequis">*</span>
+      <input type="text" id="race" class="form-control input is-primary is-small" name="race" ngModel required>
+    </label><br>
+  </div>
+
+  <div class="form-group"> 
+    <label for="photoUrl">
+        Photo URL<span class="champsRequis">*</span>
+      <input type="url" id="photoUrl" class="form-control input is-primary is-small" name="photoUrl" ngModel required>
+    </label><br>
+  </div>
+
+  <div class="form-group"> 
+    <div class="birthdayForm">
       <label for="birthday">
-        Birthday:
-        <input type="date" id="birthday" class="form-control" name="birthday" ngModel required>
+        Birthday<span class="champsRequis">*</span>
+        <input type="date" id="birthday" class="form-control input is-primary is-small" name="birthday" ngModel required>
       </label><br>
     </div>
+  </div>
 
-    <div class="form-group"> 
-      <label for="photoUrl">
-          Photo URL:
-        <input type="url" id="photoUrl" class="form-control" name="photoUrl" ngModel>
-      </label><br>
-    </div>
-
-    <button type="submit" [disabled]="f.invalid">Submit</button>
-
-  </form>
+  <div class="buttonForm">
+    <button type="submit" [disabled]="f.invalid" class="button is-success">Submit</button>
+  </div>
+</form>
 
 
 

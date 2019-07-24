@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { TransmissionServService } from '../../services/transmission-serv.service';
 
 @Component({
@@ -6,8 +7,10 @@ import { TransmissionServService } from '../../services/transmission-serv.servic
   templateUrl: './list-kitten.component.html',
   styleUrls: ['./list-kitten.component.scss']
 })
+
 export class ListKittenComponent implements OnInit {
 datas;
+hoverIndex = false;
 
 constructor(public transmissionServService: TransmissionServService) { }
 
@@ -16,12 +19,19 @@ constructor(public transmissionServService: TransmissionServService) { }
     this.datas = this.transmissionServService.datas;
   }
 
+  enter() {
+    this.hoverIndex = true;
+  }
+
+  leave() {
+    this.hoverIndex = false;
+  }
+
   adoptKitty(i) {
-    let index = i;
-    console.log(i);
+    const index = i;
+    console.log(this.datas[index]);
     this.transmissionServService.addUserKitten(this.datas[index]);
-    // this.datas.slice(this.datas[index]);
-    console.log(this.datas);
+    this.datas.splice(this.datas[index], 1);
   }
 
 }

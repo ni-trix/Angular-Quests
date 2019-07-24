@@ -1,0 +1,27 @@
+.headerList{
+    margin-bottom: 5%;
+    h1{
+        font-size: 30px;
+    }
+}
+
+.kittenCard{
+    padding: 5%;
+    text-align: center;
+    border: solid 0.5px grey;
+    border-radius: 20%;
+    img{
+        border-radius: 20%;
+        width: 150px;
+        height: 150px;
+    }
+    .kittenInfos{
+        text-align: center;
+    }
+    button{
+        color: white;
+        background-color: rosybrown;
+        border-radius: 75%;
+        cursor: pointer;
+    }
+}
